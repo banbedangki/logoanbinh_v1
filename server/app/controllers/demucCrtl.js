@@ -5,8 +5,8 @@ app.controller('demucCtrl', ['$scope', '$window', '$http', function($scope, $win
 	function laytenDemuc(){
 		$http.get('api/laytenDemuc').then(function(response){
 			console.log(response);
-			$scope.ten_demuc = response.data;
-
+			$scope.abouts = response.data;
+			console.log(data);
 		});
 	};
 	laytenDemuc();

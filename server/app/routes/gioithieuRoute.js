@@ -2,9 +2,9 @@ var express    = require("express");
 var router     = express.Router();
 var bodyParser = require("body-parser");
 
-var demuc = require('../models/demuc');
+var gioithieu = require('../models/gioithieu');
 router.use(bodyParser.json());
-router.get('/laytenDemuc', function(req, res){
-    demuc.layds(req, res);
+router.get('/layGioithieu', function(req, res){
+    gioithieu.laydsGioithieu(req, res);
 });
 module.exports = router;
