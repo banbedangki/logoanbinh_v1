@@ -4,7 +4,7 @@
         <div class="w3-agileits-about-grids">
             <div class="col-md-4 agile-about-left">
               <div class="w3-about-border">
-              <h3>{{data[0].ten_demuc}}</h3>
+              <h3><b>GIỚI THIỆU</b></h3>
               
               </div>
             
@@ -14,14 +14,14 @@
                   <div class="slider">
                     <div class="callbacks_container">
                       <ul class="rslides" id="slider4">
-                        <li  *ngFor="let info of getData">                           
+                        <li  *ngFor="let info of data">                           
                                <div class="w3ls-text">
-                                 <h3>{{info}}</h3>
-                                 <p>dwqqqqqqqqqqqqq<span>gfhhhhhhhhhhh</span></p>
+                                 <h3>{{info.ten_gioithieu}}</h3>
+                                 <p>{{info.noidung}}</p>
                                </div>
                         </li>
                      
-                  <!--   <li>
+                     <!-- <li>
                       <div class="w3ls-text">
                         <h3>Nam aliquam pretium</h3>
                         <p>{{getData[2]}}   Dummy Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknowns.
@@ -31,7 +31,7 @@
                       <li>
                       <div class="w3ls-text">
                         <h3>Duis aute irure dolor</h3>
-                        <p>{{getData[1]}}
+                        <p>fafwokfpowkfpowkfpwokfpowkfpowkpojgijrpfkwopfkwokfpoawfkwpofkwopkfpowkfpowkfpokwofpkwapofkwopfkowpkfwpo
                           <span>Dummy Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknowns.</span></p>
     
                       </div>
@@ -50,7 +50,7 @@
                         <p>Herpue Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknowns.<span>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknowns.</span></p>
     
                       </div>
-                      </li> -->
+                      </li>  -->
                       
                     </ul>
                   </div>

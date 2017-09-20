@@ -6,6 +6,7 @@ var app          = express();
 //get routes
 var demuc     = require('./app/routes/demucRoute');
 var gioithieu = require('./app/routes/gioithieuRoute');
+var thietke   = require('./app/routes/thietkeRoute');
 
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
@@ -14,6 +15,7 @@ app.use(cookieParser());
 //get api
 app.use('/api', demuc);
 app.use('/api', gioithieu);
+app.use('/api', thietke);
 
 app.use(express.static("public"));
 app.set("view engine", "ejs");

@@ -14,15 +14,14 @@ declare var $ :any;
   styleUrls: ['./about.component.css'],
 })
 export class AboutComponent implements OnInit {
-  private url = "http://localhost:3000/api/laytenDemuc";
-  public data = [{id_demuc:0, ten_demuc:""}];
+  private url = "http://localhost:3000/api/layGioithieu";
+  public data = [{id_gioithieu: 0, ten_gioithieu: "", noidung: ""}];
   //getData:any = [];
-  getData:any = [];
   
   constructor(private http: Http) {
     this.getAbouts();
     this.getInfos();
-    this.getArrdata();
+    //this.getArrdata();
    }
   getInfos(){
     return this.http.get(this.url)
@@ -31,16 +30,15 @@ export class AboutComponent implements OnInit {
  
   getAbouts(){  
     this.getInfos().subscribe(data => {
-      console.log(data);
+      //console.log(data);
       this.data = data;
     
-      for ( let k of this.data){
-       // console.log("data is components: " + k.ten_demuc);
-        this.getData.push(k.ten_demuc+"");        
-      }  
-      var runOneTime = false;
-      setInterval (() => {
-        if(!runOneTime) {
+      // for ( let k of this.data){
+      //  // console.log("data is components: " + k.ten_demuc);
+      //   //this.getData.push(k.ten_gioithieu+"");        
+      // }  
+      setTimeout (() => {
+        //if(!runOneTime) {
           $("#slider4").responsiveSlides({
             auto: true,
             pager:true,
@@ -54,20 +52,20 @@ export class AboutComponent implements OnInit {
               $('.events').append("<li>after event fired.</li>");
             }
             });
-        }
-        runOneTime = true;
+       // }
+        //runOneTime = true;
       }, 1);
       
     })
   }
 
-  getArrdata(){
+  // getArrdata(){
 
-    for(var i of this.getData){
-      console.log("componentes: " + i);
-      console.log(this.getData.length);
-    }
-  }
+  //   for(var i of this.getData){
+  //     console.log("componentes: " + i);
+  //     console.log(this.getData.length);
+  //   }
+  // }
   ngOnInit() {
     
   }
