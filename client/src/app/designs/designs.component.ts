@@ -11,8 +11,8 @@ import 'rxjs/Rx';
   styleUrls: ['./designs.component.css']
 })
 export class DesignsComponent implements OnInit {
-  private url = "http://localhost:3000/api/laydsThietke";
-  public data = [{id_thietke: 0, ten_mautk: "", hinhtk:"", noidungtk: ""}];
+  private url = "http://localhost:8080/mauthietke";
+    public design = [{id_thietke:0, ten_mautk:"", hinhtk:"", noidungtk:""}];
   constructor(private http: Http) {
     this.getDesign();
     this.getDatas();
@@ -26,9 +26,10 @@ export class DesignsComponent implements OnInit {
   getDesign(){
     this.getDatas().subscribe(data => {
       console.log(data);
-      this.data = data;
+      this.design = data;
+      console.log(this.design);
 
-      for(let k of this.data){
+      for(let k of this.design){
         console.log("data have: " + k.noidungtk);
       }
     });

@@ -6,6 +6,14 @@ var getDemuc = function(req, res){
         res.json(rows);
     });
 };
+
+// var deleteDemuc = function(req, res){
+//   var sql = "delete from demuc where id=?";
+//   connection.query(sqlm function(err, rows){
+//     res.json(rows);
+//   });
+// };
 module.exports = {
-    layds : getDemuc
+    layds : getDemuc,
+    xoaDemuc : deleteDemuc
 };

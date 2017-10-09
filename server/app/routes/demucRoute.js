@@ -7,4 +7,7 @@ router.use(bodyParser.json());
 router.get('/laytenDemuc', function(req, res){
     demuc.layds(req, res);
 });
+// router.delete('/demuc', function(req, res){
+//     demuc.xoaDemuc(req, res);
+// });
 module.exports = router;

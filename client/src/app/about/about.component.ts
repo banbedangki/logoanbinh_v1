@@ -14,10 +14,10 @@ declare var $ :any;
   styleUrls: ['./about.component.css'],
 })
 export class AboutComponent implements OnInit {
-  private url = "http://localhost:3000/api/layGioithieu";
+  private url = "http://localhost:8080/gioithieu";
   public data = [{id_gioithieu: 0, ten_gioithieu: "", noidung: ""}];
   //getData:any = [];
-  
+
   constructor(private http: Http) {
     this.getAbouts();
     this.getInfos();
@@ -27,52 +27,64 @@ export class AboutComponent implements OnInit {
     return this.http.get(this.url)
     .map((res:Response) => res.json())
   }
- 
-  getAbouts(){  
+
+  getAbouts(){
     this.getInfos().subscribe(data => {
       //console.log(data);
-      this.data = data;
-    
-      // for ( let k of this.data){
-      //  // console.log("data is components: " + k.ten_demuc);
-      //   //this.getData.push(k.ten_gioithieu+"");        
-      // }  
-      setTimeout (() => {
-        //if(!runOneTime) {
-          $("#slider4").responsiveSlides({
-            auto: true,
-            pager:true,
-            nav:false,
-            speed: 500,
-            namespace: "callbacks",
-            before: function () {
-              $('.events').append("<li>before event fired.</li>");
-            },
-            after: function () {
-              $('.events').append("<li>after event fired.</li>");
-            }
+      var self = this;
+
+      let promise = new Promise(function(resolve, reject) {
+            var element = $("#slider4").responsiveSlides({
+              auto: true,
+              pager:true,
+              nav:false,
+              speed: 500,
+              namespace: "callbacks",
+              before: function () {
+                $('.events').append("<li>before event fired.</li>");
+              },
+              after: function () {
+                $('.events').append("<li>after event fired.</li>");
+              }
             });
-       // }
-        //runOneTime = true;
-      }, 1);
-      
+            if(element.length !== 0) {
+              resolve(element);
+            }
+      });
+
+      promise.then(function(elm) {
+        self.data = data;
+      });
+
+      // setTimeout (() => {
+      //   //if(!runOneTime) {
+      //     $("#slider4").responsiveSlides({
+      //       auto: true,
+      //       pager:true,
+      //       nav:false,
+      //       speed: 500,
+      //       namespace: "callbacks",
+      //       before: function () {
+      //         $('.events').append("<li>before event fired.</li>");
+      //       },
+      //       after: function () {
+      //         $('.events').append("<li>after event fired.</li>");
+      //       }
+      //       });
+      //  // }
+      //   //runOneTime = true;
+      // }, 2000);
+
     })
   }
 
-  // getArrdata(){
-
-  //   for(var i of this.getData){
-  //     console.log("componentes: " + i);
-  //     console.log(this.getData.length);
-  //   }
-  // }
   ngOnInit() {
-    
+
   }
 
   ngAfterViewInit() {
- 
-        
+
+
   }
 
 }
