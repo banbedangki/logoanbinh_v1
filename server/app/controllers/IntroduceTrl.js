@@ -7,9 +7,29 @@ module.exports.getIntroduce = function(req, res, next){
   });
 
   module.exports.createIntroduce = function(req, res, next){
-    var sql = "INSERT INTO `gioithieu`(`id_gioithieu`, `ten_gioithieu`, `noidung`) VALUES (?,?,?)";
-    connection.query(sql, function(err, rows){
-      res.json(rows);
+    // var sql = "INSERT INTO `gioithieu`(`id_gioithieu`, `ten_gioithieu`, `noidung`) VALUES (?,?,?)";
+    // connection.query(sql, function(err, rows){
+    //   res.json(rows);
+    // });
+    var postData = req.body;
+    connection.query('INSERT INTO gioithieu SET ?', postData, function (error, results, fields) {
+        if (error) throw error;
+        res.end(JSON.stringify(results));
+    });
+  }
+
+  module.exports.editIntroduce = function(req, res, next){
+    connection.query('UPDATE gioithieu SET ten_gioithieu=?,noidung=? WHERE id_gioithieu = ?',
+    [req.body.ten_gioithieu, req.body.noidung, req.body.id_gioithieu], function(err, results, fields){
+      if(err) throw err;
+      res.end(JSON.stringify(results));
+    });
+  }
+
+  module.exports.deleteoneIntroduce = function(req, res, next){
+    connection.query('DELETE FROM gioithieu WHERE id_gioithieu = ?', [req.body.id_gioithieu], function(err, results, fields){
+      if(err) throw err;
+      res.end('detele success!');
     });
   }
 }

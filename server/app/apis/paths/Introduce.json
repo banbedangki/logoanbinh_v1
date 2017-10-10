@@ -55,7 +55,7 @@
             "put": {
                 "summary": "create new coffee",
                 "description": "input a new coffee to insert CoffeeDB",
-                "operationId": "updateBrand",
+                "operationId": "editIntroduce",
                  "parameters": [
                     {
                         "in": "body",
@@ -86,11 +86,11 @@
             "delete": {
                 "summary": "Product Types",
                 "description": "This is test Apis Book",
-                "operationId": "deleteBrand",
+                "operationId": "deleteoneIntroduce",
                 "parameters": [
                     {
                         "in": "query",
-                        "name": "brandId",
+                        "name": "introduceId",
                         "description": "Coffee object that needs to be added to the CoffeeDB",
                         "required": false,
                         "type": "string"
