@@ -1,16 +1,12 @@
-var connection = require('../models/connection.js');
+var connection = require('../connection/connection.js');
 
 module.exports.getIntroduce = function(req, res, next){
   var sql = "select * from gioithieu";
   connection.query(sql, function(err, rows){
       res.json(rows);
   });
-
+ }
   module.exports.createIntroduce = function(req, res, next){
-    // var sql = "INSERT INTO `gioithieu`(`id_gioithieu`, `ten_gioithieu`, `noidung`) VALUES (?,?,?)";
-    // connection.query(sql, function(err, rows){
-    //   res.json(rows);
-    // });
     var postData = req.body;
     connection.query('INSERT INTO gioithieu SET ?', postData, function (error, results, fields) {
         if (error) throw error;
@@ -26,10 +22,16 @@ module.exports.getIntroduce = function(req, res, next){
     });
   }
 
-  module.exports.deleteoneIntroduce = function(req, res, next){
-    connection.query('DELETE FROM gioithieu WHERE id_gioithieu = ?', [req.body.id_gioithieu], function(err, results, fields){
+  // module.exports.deleteoneIntroduce = function(req, res, next){
+  //   connection.query('DELETE FROM gioithieu WHERE id_gioithieu = ?', [req.body.id_gioithieu], function(err, results, fields){
+  //     if(err) throw err;
+  //     res.end('detele success!');
+  //   });
+  // }
+
+  module.exports.deleteoneIntroduce = function(id, req, res, next){
+    connection.query('DELETE FROM gioithieu WHERE id_gioithieu = ?', [req.body.id], function(err, results, fields){
       if(err) throw err;
       res.end('detele success!');
     });
   }
-}

@@ -2,7 +2,7 @@ var express      = require("express");
 var bodyParser   = require('body-parser');
 var cookieParser = require('cookie-parser');
 var swagger      = require('swagger-tools');
-var path =  require('path');
+var path         =  require('path');
 var fs           = require('fs');
 var app          = express();
 

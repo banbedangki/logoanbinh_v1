@@ -11,7 +11,7 @@ import 'rxjs/Rx';
   styleUrls: ['./designs.component.css']
 })
 export class DesignsComponent implements OnInit {
-  private url = "http://localhost:8080/mauthietke";
+  private url = "http://localhost:3000/api/design";
     public design = [{id_thietke:0, ten_mautk:"", hinhtk:"", noidungtk:""}];
   constructor(private http: Http) {
     this.getDesign();

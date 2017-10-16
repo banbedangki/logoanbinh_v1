@@ -18,6 +18,28 @@
               }
             },
 
+            "Design":{
+              "type": "object",
+              "properties": {
+                "designId": {
+                  "type": "integer",
+                  "description": "id of table design"
+                },
+                "designName": {
+                  "type": "string",
+                  "description": "name of table design"
+                },
+                "picture": {
+                  "type": "string",
+                  "description": "link picture of table design"
+                },
+                "designContent": {
+                  "type": "string",
+                  "description": "descipber content of table design"
+                }
+              }
+            },
+
         "Error": {
             "type": "object",
             "properties": {

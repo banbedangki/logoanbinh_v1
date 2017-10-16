@@ -1,15 +1,15 @@
 {
   "paths": {
-    "/introduce": {
+    "/design": {
             "get": {
-                "summary": "get all introduces",
+                "summary": "get all designs",
                 "description": "This is test Topic of Introduce table",
-                "operationId": "getIntroduces",
+                "operationId": "getDesign",
                 "responses": {
                         "200": {
                             "description": "template file",
                             "schema": {
-                                "$ref": "#/definitions/Introduce"
+                                "$ref": "#/definitions/Design"
                             }
                         },
                         "default": {
@@ -22,9 +22,9 @@
                 "x-swagger-router-controller": "DefaultCtrl"
             },
             "post": {
-                "summary": "create new introduce",
+                "summary": "create new design",
                 "description": "input a new introduce to talbe of Introduce",
-                "operationId": "createIntroduce",
+                "operationId": "createDesign",
                  "parameters": [
                     {
                         "in": "body",
@@ -32,7 +32,7 @@
                         "description": "Coffee object that needs to be added to the CoffeeDB",
                         "required": false,
                         "schema": {
-                        "$ref": "#/definitions/Introduce"
+                        "$ref": "#/definitions/Design"
                         }
                     }
                 ],
@@ -40,7 +40,7 @@
                     "200": {
                         "description": "template file",
                         "schema": {
-                            "$ref": "#/definitions/Introduce"
+                            "$ref": "#/definitions/Design"
                         }
                     },
                     "default": {
@@ -53,9 +53,9 @@
                 "x-swagger-router-controller": "DefaultCtrl"
             },
             "put": {
-                "summary": "edit new introduce",
+                "summary": "edit new design",
                 "description": "input a new introduce to insert datamodel",
-                "operationId": "editIntroduce",
+                "operationId": "editDesign",
                  "parameters": [
                     {
                         "in": "body",
@@ -63,7 +63,7 @@
                         "description": "add to the datamodel",
                         "required": false,
                         "schema": {
-                        "$ref": "#/definitions/Introduce"
+                        "$ref": "#/definitions/Design"
                         }
                     }
                 ],
@@ -71,7 +71,7 @@
                     "200": {
                         "description": "template file",
                         "schema": {
-                            "$ref": "#/definitions/Introduce"
+                            "$ref": "#/definitions/Design"
                         }
                     },
                     "default": {
@@ -84,23 +84,23 @@
                 "x-swagger-router-controller": "DefaultCtrl"
             },
             "delete": {
-                "summary": "delete introduce follow introduceId",
-                "description": "This is test Apis Introduce",
-                "operationId": "deleteoneIntroduce",
+                "summary": "delete design follow designId",
+                "description": "This is test Apis Design",
+                "operationId": "deleteoneDesign",
                 "parameters": [
                     {
                         "in": "query",
                         "name": "introduceId",
-                        "description": "Introduce object that needs to be added to the datamodel",
+                        "description": "Coffee object that needs to be added to the CoffeeDB",
                         "required": false,
-                        "type": "string"
+                        "type": "integer"
                     }
                 ],
                 "responses": {
                         "200": {
                             "description": "template file",
                             "schema": {
-                                "$ref": "#/definitions/Introduce"
+                                "$ref": "#/definitions/Design"
                             }
                         },
                         "default": {
@@ -110,7 +110,7 @@
                             }
                         }
                     },
-                "x-swagger-router-controller": "IntroduceCtrl"
+                "x-swagger-router-controller": "DefaultCtrl"
             }
           }
   }

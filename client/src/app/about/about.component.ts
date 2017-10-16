@@ -14,7 +14,7 @@ declare var $ :any;
   styleUrls: ['./about.component.css'],
 })
 export class AboutComponent implements OnInit {
-  private url = "http://localhost:8080/gioithieu";
+  private url = "http://localhost:3000/api/introduce";
   public data = [{id_gioithieu: 0, ten_gioithieu: "", noidung: ""}];
   //getData:any = [];
 
