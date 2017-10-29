@@ -6,10 +6,11 @@ module.exports.getIntroduce = function(req, res, next){
       res.json(rows);
   });
  }
+
   module.exports.createIntroduce = function(req, res, next){
     var postData = req.body;
-    connection.query('INSERT INTO gioithieu SET ?', postData, function (error, results, fields) {
-        if (error) throw error;
+    connection.query('INSERT INTO gioithieu SET ?', postData, function (err, results, fields) {
+        if (err) throw err;
         res.end(JSON.stringify(results));
     });
   }

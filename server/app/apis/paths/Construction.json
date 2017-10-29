@@ -1,15 +1,15 @@
 {
   "paths": {
-    "/introduce": {
+    "/construction": {
             "get": {
-                "summary": "get all introduces",
-                "description": "This is test Topic of Introduce table",
-                "operationId": "getIntroduces",
+                "summary": "get all Construction",
+                "description": "This is test Topic of Construction table",
+                "operationId": "getConstruction",
                 "responses": {
                         "200": {
                             "description": "template file",
                             "schema": {
-                                "$ref": "#/definitions/Introduce"
+                                "$ref": "#/definitions/Construction"
                             }
                         },
                         "default": {
@@ -22,9 +22,9 @@
                 "x-swagger-router-controller": "DefaultCtrl"
             },
             "post": {
-                "summary": "create new introduce",
-                "description": "input a new introduce to talbe of Introduce",
-                "operationId": "createIntroduce",
+                "summary": "create new Construction",
+                "description": "input a new Construction to talbe of Construcion",
+                "operationId": "createConstruction",
                  "parameters": [
                     {
                         "in": "body",
@@ -32,7 +32,7 @@
                         "description": "Coffee object that needs to be added to the CoffeeDB",
                         "required": false,
                         "schema": {
-                        "$ref": "#/definitions/Introduce"
+                        "$ref": "#/definitions/Construction"
                         }
                     }
                 ],
@@ -40,7 +40,7 @@
                     "200": {
                         "description": "template file",
                         "schema": {
-                            "$ref": "#/definitions/Introduce"
+                            "$ref": "#/definitions/Construction"
                         }
                     },
                     "default": {
@@ -53,9 +53,9 @@
                 "x-swagger-router-controller": "DefaultCtrl"
             },
             "put": {
-                "summary": "edit new introduce",
-                "description": "input a new introduce to insert datamodel",
-                "operationId": "editIntroduce",
+                "summary": "edit new Construction",
+                "description": "input a new construction to insert datamodel",
+                "operationId": "editConstruction",
                  "parameters": [
                     {
                         "in": "body",
@@ -63,7 +63,7 @@
                         "description": "add to the datamodel",
                         "required": false,
                         "schema": {
-                        "$ref": "#/definitions/Introduce"
+                        "$ref": "#/definitions/Construction"
                         }
                     }
                 ],
@@ -71,7 +71,7 @@
                     "200": {
                         "description": "template file",
                         "schema": {
-                            "$ref": "#/definitions/Introduce"
+                            "$ref": "#/definitions/Construction"
                         }
                     },
                     "default": {
@@ -84,14 +84,14 @@
                 "x-swagger-router-controller": "DefaultCtrl"
             },
             "delete": {
-                "summary": "delete introduce follow introduceId",
-                "description": "This is test Apis Introduce",
-                "operationId": "deleteoneIntroduce",
+                "summary": "delete construction follow constructionId",
+                "description": "This is test Apis Construction",
+                "operationId": "deleteoneConstruction",
                 "parameters": [
                     {
                         "in": "query",
-                        "name": "introduceId",
-                        "description": "Introduce object that needs to be added to the datamodel",
+                        "name": "constructionId",
+                        "description": "Construction object that needs to be added to the datamodel",
                         "required": false,
                         "type": "integer"
                     }
@@ -100,7 +100,7 @@
                         "200": {
                             "description": "template file",
                             "schema": {
-                                "$ref": "#/definitions/Introduce"
+                                "$ref": "#/definitions/Construction"
                             }
                         },
                         "default": {

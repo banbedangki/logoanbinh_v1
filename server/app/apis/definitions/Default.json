@@ -1,41 +1,64 @@
 {
     "definitions": {
+
             "Introduce": {
                 "type": "object",
                 "properties":{
                   "introduceId": {
                       "type": "integer",
-                      "description": "your id in data, id of table Introduce"
+                      "description": "id of Introduce"
                   },
                   "introduceName": {
                     "type": "string",
-                    "description": "your name of Introduce"
+                    "description": "name of Introduce"
                   },
                   "introduceContent": {
                     "type": "string",
-                    "description": "content of table Introduce"
+                    "description": "content of Introduce"
                   }
               }
             },
 
-            "Design":{
+            "Design": {
               "type": "object",
               "properties": {
                 "designId": {
                   "type": "integer",
-                  "description": "id of table design"
+                  "description": "id of  Design"
                 },
                 "designName": {
                   "type": "string",
-                  "description": "name of table design"
+                  "description": "name of Design"
                 },
                 "picture": {
                   "type": "string",
-                  "description": "link picture of table design"
+                  "description": "picture of Design"
                 },
                 "designContent": {
                   "type": "string",
-                  "description": "descipber content of table design"
+                  "description": "content of Design"
+                }
+              }
+            },
+
+            "Construction": {
+              "type": "object",
+              "properties": {
+                "instructionId": {
+                   "type": "integer",
+                   "description": "id of Construction"
+                },
+                "constructionName":{
+                    "type": "string",
+                    "description": "name of Construction"
+                },
+                "constructionImg": {
+                    "type": "string",
+                    "description": "image of Construction"
+                },
+                "constructionContent": {
+                    "type": "string",
+                    "description": "content of Construction"
                 }
               }
             },
